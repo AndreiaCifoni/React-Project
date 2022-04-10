@@ -1,18 +1,38 @@
 import React from "react";
 
 class RegisterToWin extends React.Component {
+  state = { name: "", email: "" };
+
+  onChangeName = (event) => {
+    this.setState({ name: event.target.value });
+  };
+
+  onChangeEmail = (event) => {
+    this.setState({ email: event.target.value });
+  };
+
   render() {
     return (
       <div className="ui segment">
         <div class="ui large form">
           <div class="two fields">
             <div class="field">
-              <label>First Name</label>
-              <input placeholder="First Name" type="text" />
+              <label>Name</label>
+              <input
+                placeholder="Name"
+                type="text"
+                value={this.state.name}
+                onChange={this.onChangeName}
+              />
             </div>
             <div class="field">
-              <label>Last Name</label>
-              <input placeholder="Last Name" type="text" />
+              <label>Email</label>
+              <input
+                placeholder="Email"
+                type="email"
+                value={this.state.email}
+                onChange={this.onChangeEmail}
+              />
             </div>
           </div>
           <div class="ui animated button" tabindex="0">
